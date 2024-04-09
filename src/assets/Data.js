@@ -1,5 +1,3 @@
-
-
 const PharmacyObjects = {
     "pharmaceuticals": [
         {
@@ -354,6 +352,5 @@ const PharmacyObjects = {
         }
     ]
 };
-
 
 export default PharmacyObjects;
