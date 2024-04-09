@@ -1,5 +1,3 @@
-
-
 const PharmacyObjects = {
     "pharmaceuticals": [
         {
@@ -353,4 +351,6 @@ const PharmacyObjects = {
             "category": "Inflammation"
         }
     ]
-}
+};
+
+export default PharmacyObjects;
