@@ -353,4 +353,7 @@ const PharmacyObjects = {
             "category": "Inflammation"
         }
     ]
-}
+};
+
+
+export default PharmacyObjects;
