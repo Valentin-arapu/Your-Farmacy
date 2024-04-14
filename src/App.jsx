@@ -1,15 +1,22 @@
+import { useState } from "react";
 import PharmacyObjects from "./assets/Data.js";
 
 function App() {
 
+  const [products, setProducts] = useState(PharmacyObjects.pharmaceuticals);
+
+  const addToCart = (id, name) => {
+    console.log(`Product added to cart: ID: ${id}, Name: ${name}`);
+  };
+
   const renderPharmaceuticalProducts = () => {
     return (
       <div>
-        {PharmacyObjects.pharmaceuticals.map((product, id) => (
+        {products.map((product, id) => (
           <div key={id}>
             <h3>{product.name}</h3>
             <p>{product.price}</p>
-            <button>Add to cart</button>
+            <button onClick={() => addToCart(id, product.name)}>Add to cart</button>
           </div>
         ))}
       </div>
