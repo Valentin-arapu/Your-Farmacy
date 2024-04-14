@@ -4,9 +4,11 @@ import PharmacyObjects from "./assets/Data.js";
 function App() {
 
   const [products, setProducts] = useState(PharmacyObjects.pharmaceuticals);
+
   const addToCart = (id, name) => {
     console.log(`Product added to cart: ID: ${id}, Name: ${name}`);
   };
+
   const renderPharmaceuticalProducts = () => {
     return (
       <div>
