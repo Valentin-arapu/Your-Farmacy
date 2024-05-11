@@ -9,9 +9,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
     <Navbar />
     <Routes>
-      <Route exact path='/Your-Farmacy' element={<Products />} />
-      <Route path='/Your-Farmacy/cart' element={<Cart />} />
-      <Route path='/Your-Farmacy/home' element={<Home />} />
+      <Route exact path='/products/' element={<Products />} />
+      <Route path='/' element={<Home />} />
+      <Route path='/cart/' element={<Cart />} />
     </Routes>
   </Router>
 );

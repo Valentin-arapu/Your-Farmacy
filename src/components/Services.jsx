@@ -1,12 +1,22 @@
-function addPharmaceuticalProductToLocalStorage(id, name, price, quantity) {
-    const pharmaceuticalProduct = {
-        id: id,
-        name: name,
-        price: price,
-        quantity: quantity
+function addToLocalStorage() {
+
+    const productCart = {
+        id: 1,
+        name: "Paracetamol",
+        price: 5.99,
+        quantity: 50
     };
 
-    localStorage.setItem('pharmaceuticalProduct', JSON.stringify(pharmaceuticalProduct));
+    localStorage.setItem("product", JSON.stringify(productCart));
 }
 
-export { addPharmaceuticalProductToLocalStorage };
+function getFromLocalStorage(key) {
+    var item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+}
+
+function removeFromLocalStorage(key) {
+    localStorage.removeItem(key);
+}
+
+export { addToLocalStorage, getFromLocalStorage, removeFromLocalStorage };

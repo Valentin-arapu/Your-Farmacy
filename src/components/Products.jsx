@@ -1,29 +1,25 @@
 import { useState } from "react";
-import PharmacyObjects from "./Data.js";
+import PharmacyObjects from "../assets/Data.js";
 
 function Products() {
 
   const [products, setProducts] = useState(PharmacyObjects.pharmaceuticals);
 
-  const addToCart = (id, name, price) => {
-    const existingProduct = JSON.parse(localStorage.getItem(id));
+  const addToCart = (id, name) => {
+    const product = JSON.parse(localStorage.getItem(id, name));
 
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-      localStorage.setItem(id, JSON.stringify(existingProduct));
-      console.log(`The product quantity ${name} was increased by 1.`);
+    if (product) {
+      product.quantity += 1;
+      localStorage.setItem(id, JSON.stringify(product));
     } else {
       const productToAdd = {
         id: id,
         name: name,
-        price: price,
         quantity: 1
       };
       localStorage.setItem(id, JSON.stringify(productToAdd));
-      console.log(`The product ${name} has been added to your shopping cart.`);
     }
   };
-
 
   const renderPharmaceuticalProducts = () => {
     return (
@@ -32,7 +28,7 @@ function Products() {
           <div key={id}>
             <h3>{product.name}</h3>
             <p>{product.price}</p>
-            <button onClick={() => addToCart(id, product.name, product.price)}>Add to cart</button>
+            <button onClick={() => addToCart(id, product.name,)}>Add to cart</button>
           </div>
         ))}
       </div>
